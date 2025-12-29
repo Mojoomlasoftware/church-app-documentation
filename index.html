@@ -59,6 +59,7 @@
                      <li><a href="#change-base-url">Change Base URL</a></li>
                      <li><a href="#Android-Customization">Flutter Customization</a></li>
                      <li><a href="#firebase-notifications">Firebase Notifications</a></li>
+                     <li><a href="#license_error_troubleshooting">License Validation Troubleshooting</a></li>
                      <li><a href="#license_settings">License Registration Settings</a></li>
                      <li><a href="#sign-your-release-build">Create Release Build</a></li>
                      <li>
@@ -83,7 +84,7 @@
             <div class="col-md-8">
                <section id="Introduction">
                   <div id="header" class="row">
-                     <div class="col-md-3 logo"> <a href="index.html"><img src="images/login_church.jpg" width="230px"
+                     <div class="col-md-3 logo"> <a href="index.html"><img src="images/login_church.png" width="230px"
                               height="70px" id="img-logo" alt="logo"></a> </div>
                      <div class="col-md-8 col-md-offset-1 desc">
                         <h4 class="slight">Church App - Church Management System<sub><small></small></sub></h4>
@@ -371,50 +372,7 @@
                         <br>
                         <br>
                      </section>
-                      <section id="sign-your-release-build">
-                          <h3><strong>I) <u>Sign your release build</u></strong></h3>
-                          <br>
-                          <p>To sign a release build for Church Management App, you can follow these steps:
-                              <br>
-                              <strong>Step 1: Generate a keystore file</strong>
-                              <li>Right-click on the "android" directory and select "Flutter" -> "Open Android module in
-                                  Android Studio"</li>
-                              <li>In the Generate Signed Bundle or APK dialog, select Android App Bundle or APK and click
-                                  Next.</li>
-                              <li>Below the field for Key store path, click Create new.</li>
-                              <li>On the New Key Store window, provide the following information for your keystore and key,
-                                  as shown in figure 2.<br>
-                                  <img alt="" src="images/key-store.png" height="400" width="400">
-                              </li>
-                          <p>• Keystore
-                              <li><strong>Key store path:</strong> Select the location where your keystore should be
-                                  created. Also, a file name should be added to the end of the location path with the .jks
-                                  extension.</li>
-                          </p>
-                          <li><strong>Password:</strong> Create and confirm a secure password for your keystore.</li>
-                          </p>
-                          <p>• Key
-                              <li><strong>Alias:</strong> Enter an identifying name for your key.</li>
-                              <li><strong>Password:</strong> Create and confirm a secure password for your key. This should
-                                  be the same as your keystore password.</li>
-                              <li><strong>Validity (yeas):</strong> Set the length of time in years that your key will be
-                                  valid. Your key should be valid for at least 25 years, so you can sign app updates with
-                                  the same key through the lifespan of your app.</li>
-                              <li>Certificate: Enter some information about yourself for your certificate. This information
-                                  is not displayed in your app, but is included in your certificate as part of the APK.</li>
-                          </p>
-                          <li>Once you complete the form, click <strong>OK</strong>.</li>
-                          <img alt="" src="images/built.PNG" height="400" width="800"></li>
-                          <li>Now Replace <strong>dasinfomedia app.jks</strong> File and Open
-                              <strong>key.properties</strong> File And Change your <strong>.jks</strong> file Detail
-                          </li>
-                          <li>Now you can follow these steps and Generate Your Release Apk</li>
-                          <img alt="" src="images/apkk.png" height="200" width="500"></li>
-                          <p>Click on "Build" → then click on "Flutter" → and finally click on "Build APK".
-                              <strong>church_wp_app\build\app\outputs\apk\release</strong>This space will appear after the
-                              build is complete.
-                          </p>
-                      </section>
+
                       <section id="license_error_troubleshooting">
                           <h3><strong>J) <u>License Validation Troubleshooting</u></strong></h3>
                           <br>
@@ -551,7 +509,50 @@
                          <br><br>
 
                      </section>
-
+                      <section id="sign-your-release-build">
+                          <h3><strong>I) <u>Sign your release build</u></strong></h3>
+                          <br>
+                          <p>To sign a release build for Church Management App, you can follow these steps:
+                              <br>
+                              <strong>Step 1: Generate a keystore file</strong>
+                              <li>Right-click on the "android" directory and select "Flutter" -> "Open Android module in
+                                  Android Studio"</li>
+                              <li>In the Generate Signed Bundle or APK dialog, select Android App Bundle or APK and click
+                                  Next.</li>
+                              <li>Below the field for Key store path, click Create new.</li>
+                              <li>On the New Key Store window, provide the following information for your keystore and key,
+                                  as shown in figure 2.<br>
+                                  <img alt="" src="images/key-store.png" height="400" width="400">
+                              </li>
+                          <p>• Keystore
+                              <li><strong>Key store path:</strong> Select the location where your keystore should be
+                                  created. Also, a file name should be added to the end of the location path with the .jks
+                                  extension.</li>
+                          </p>
+                          <li><strong>Password:</strong> Create and confirm a secure password for your keystore.</li>
+                          </p>
+                          <p>• Key
+                              <li><strong>Alias:</strong> Enter an identifying name for your key.</li>
+                              <li><strong>Password:</strong> Create and confirm a secure password for your key. This should
+                                  be the same as your keystore password.</li>
+                              <li><strong>Validity (yeas):</strong> Set the length of time in years that your key will be
+                                  valid. Your key should be valid for at least 25 years, so you can sign app updates with
+                                  the same key through the lifespan of your app.</li>
+                              <li>Certificate: Enter some information about yourself for your certificate. This information
+                                  is not displayed in your app, but is included in your certificate as part of the APK.</li>
+                          </p>
+                          <li>Once you complete the form, click <strong>OK</strong>.</li>
+                          <img alt="" src="images/built.PNG" height="400" width="800"></li>
+                          <li>Now Replace <strong>dasinfomedia app.jks</strong> File and Open
+                              <strong>key.properties</strong> File And Change your <strong>.jks</strong> file Detail
+                          </li>
+                          <li>Now you can follow these steps and Generate Your Release Apk</li>
+                          <img alt="" src="images/apkk.png" height="200" width="500"></li>
+                          <p>Click on "Build" → then click on "Flutter" → and finally click on "Build APK".
+                              <strong>church_wp_app\build\app\outputs\apk\release</strong>This space will appear after the
+                              build is complete.
+                          </p>
+                      </section>
 
                      <section id="church-app-pages">
                         <h3><strong>L) <u>Church Management App Overview</u></strong></h3>
