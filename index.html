@@ -371,8 +371,124 @@
                         <br>
                         <br>
                      </section>
+                      <section id="sign-your-release-build">
+                          <h3><strong>H) <u>Sign your release build</u></strong></h3>
+                          <br>
+                          <p>To sign a release build for Church Management App, you can follow these steps:
+                              <br>
+                              <strong>Step 1: Generate a keystore file</strong>
+                              <li>Right-click on the "android" directory and select "Flutter" -> "Open Android module in
+                                  Android Studio"</li>
+                              <li>In the Generate Signed Bundle or APK dialog, select Android App Bundle or APK and click
+                                  Next.</li>
+                              <li>Below the field for Key store path, click Create new.</li>
+                              <li>On the New Key Store window, provide the following information for your keystore and key,
+                                  as shown in figure 2.<br>
+                                  <img alt="" src="images/key-store.png" height="400" width="400">
+                              </li>
+                          <p>• Keystore
+                              <li><strong>Key store path:</strong> Select the location where your keystore should be
+                                  created. Also, a file name should be added to the end of the location path with the .jks
+                                  extension.</li>
+                          </p>
+                          <li><strong>Password:</strong> Create and confirm a secure password for your keystore.</li>
+                          </p>
+                          <p>• Key
+                              <li><strong>Alias:</strong> Enter an identifying name for your key.</li>
+                              <li><strong>Password:</strong> Create and confirm a secure password for your key. This should
+                                  be the same as your keystore password.</li>
+                              <li><strong>Validity (yeas):</strong> Set the length of time in years that your key will be
+                                  valid. Your key should be valid for at least 25 years, so you can sign app updates with
+                                  the same key through the lifespan of your app.</li>
+                              <li>Certificate: Enter some information about yourself for your certificate. This information
+                                  is not displayed in your app, but is included in your certificate as part of the APK.</li>
+                          </p>
+                          <li>Once you complete the form, click <strong>OK</strong>.</li>
+                          <img alt="" src="images/built.PNG" height="400" width="800"></li>
+                          <li>Now Replace <strong>dasinfomedia app.jks</strong> File and Open
+                              <strong>key.properties</strong> File And Change your <strong>.jks</strong> file Detail
+                          </li>
+                          <li>Now you can follow these steps and Generate Your Release Apk</li>
+                          <img alt="" src="images/apkk.png" height="200" width="500"></li>
+                          <p>Click on "Build" → then click on "Flutter" → and finally click on "Build APK".
+                              <strong>church_wp_app\build\app\outputs\apk\release</strong>This space will appear after the
+                              build is complete.
+                          </p>
+                      </section>
+                      <section id="license_error_troubleshooting">
+                          <h3><strong>J) <u>License Validation Troubleshooting</u></strong></h3>
+                          <br>
+                          <p>If you have not registered your license key in the WordPress backend as shown in Section I, your project build will fail. Below is how the error appears in both Android and iOS environments.</p>
+                          <br>
+
+                          <ol style="list-style-type: none;">
+                              <li>
+                                  <h4><strong>1.1) Android Studio / VS Code (Android Build)</strong></h4>
+                                  <p>When you attempt to <b>Debug</b> or <b>Build APK</b>, the process will terminate. You can see the error in the <b>"Run"</b> or <b>"Terminal"</b> tab at the bottom of Android Studio.</p>
+                                  <img alt="Android License Error" src="images/android_license_error.png" width="100%">
+                                  <br><br>
+                                  <div style="background-color: #ffebee; border-left: 5px solid #f44336; padding: 10px;">
+                                      <strong>Terminal Message:</strong> <br>
+                                      <code>* What went wrong: <br>
+                                          Your license key has not been registered yet. Please go to Web Settings and register your license key.</code>
+                                  </div>
+                              </li>
+                              <br><br>
+
+                              <li>
+                                  <h4><strong>1.2) Xcode / Terminal (iOS Build)</strong></h4>
+                                  <p>For iOS users, if you run the app on a Simulator or Physical Device without a registered license, the <b>Xcode Debug Console</b> will display the validation failure as shown below:</p>
+                                  <img alt="iOS License Error" src="images/ios_license_error.png" width="100%">
+                                  <br><br>
+                                  <div style="background-color: #ffebee; border-left: 5px solid #f44336; padding: 10px;">
+                                      <strong>Xcode Console:</strong> <br>
+                                      <code>Your license key has not been registered yet. Please go to Web Settings and register your license key.</code>
+                                  </div>
+                              </li>
+                          </ol>
+
+                          <br>
+                          <div style="padding: 15px; background-color: #e3f2fd; border: 1px solid #2196f3;">
+                              <strong>How to fix:</strong> After registering your license in WordPress, go back to your IDE terminal and run:
+                              <br><code>flutter clean</code>
+                              <br><code>flutter pub get</code>
+                              <br><code>flutter run</code>
+                          </div>
+                      </section>
+                      <br>
+                      <section id="resolution_steps">
+                          <h4><strong>2) How to Resolve "License Not Registered" Error</strong></h4>
+                          <p>If you see the error messages in Android Studio or Xcode as shown above, please follow these exact steps to register your key and enable your build:</p>
+
+                          <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+                              <ol>
+                                  <li style="margin-bottom: 15px;">
+                                      <strong>Step 1:</strong> Go to <strong><a href="#license_settings" style="color: #007bff; text-decoration: underline;">Section J: License Registration Settings</a></strong>
+                                      and follow the detailed guide to obtain and verify your key.
+                                  </li>
+                                  <li style="margin-bottom: 10px;">
+                                      <strong>Step 2:</strong> Ensure you have clicked <strong>Submit</strong> in your WordPress backend (Mobile App Settings tab) and received the "Verification completed successfully" confirmation.
+                                  </li>
+                                  <li style="margin-bottom: 10px;">
+                                      <strong>Step 3:</strong> Return to your IDE (Android Studio or Xcode).
+                                  </li>
+                                  <li style="margin-bottom: 10px;">
+                                      <strong>Step 4:</strong> It is important to clear the previous build cache. Run this command in your terminal:
+                                      <br><code style="background: #eee; padding: 2px 5px; border-radius: 3px;">flutter clean</code>
+                                  </li>
+                                  <li style="margin-bottom: 10px;">
+                                      <strong>Step 5:</strong> Re-run your project:
+                                      <br><code style="background: #eee; padding: 2px 5px; border-radius: 3px;">flutter run</code>
+                                  </li>
+                              </ol>
+                          </div>
+
+                          <p style="margin-top: 15px;">
+                              <i class="fa fa-info-circle"></i> <strong>Note:</strong> The app requires an active internet connection during the first launch to validate the license with your WordPress server.
+                          </p>
+                      </section>
                      <section id="license_settings">
-                        <h3><strong>I) <u>License Registration Settings</u></strong></h3>
+                        <h3><strong>J) <u>License Registration Settings</u></strong></h3>
                         <br>
                         <h4><strong>1)How to get License Key ?<strong></h4>
                         <br>
@@ -435,53 +551,10 @@
                          <br><br>
 
                      </section>
-                     <section id="sign-your-release-build">
-                        <h3><strong>H) <u>Sign your release build</u></strong></h3>
-                        <br>
-                        <p>To sign a release build for Church Management App, you can follow these steps:
-                           <br>
-                           <strong>Step 1: Generate a keystore file</strong>
-                           <li>Right-click on the "android" directory and select "Flutter" -> "Open Android module in
-                              Android Studio"</li>
-                           <li>In the Generate Signed Bundle or APK dialog, select Android App Bundle or APK and click
-                              Next.</li>
-                           <li>Below the field for Key store path, click Create new.</li>
-                           <li>On the New Key Store window, provide the following information for your keystore and key,
-                              as shown in figure 2.<br>
-                              <img alt="" src="images/key-store.png" height="400" width="400">
-                           </li>
-                        <p>• Keystore
-                           <li><strong>Key store path:</strong> Select the location where your keystore should be
-                              created. Also, a file name should be added to the end of the location path with the .jks
-                              extension.</li>
-                        </p>
-                        <li><strong>Password:</strong> Create and confirm a secure password for your keystore.</li>
-                        </p>
-                        <p>• Key
-                           <li><strong>Alias:</strong> Enter an identifying name for your key.</li>
-                           <li><strong>Password:</strong> Create and confirm a secure password for your key. This should
-                              be the same as your keystore password.</li>
-                           <li><strong>Validity (yeas):</strong> Set the length of time in years that your key will be
-                              valid. Your key should be valid for at least 25 years, so you can sign app updates with
-                              the same key through the lifespan of your app.</li>
-                           <li>Certificate: Enter some information about yourself for your certificate. This information
-                              is not displayed in your app, but is included in your certificate as part of the APK.</li>
-                        </p>
-                        <li>Once you complete the form, click <strong>OK</strong>.</li>
-                        <img alt="" src="images/built.PNG" height="400" width="800"></li>
-                        <li>Now Replace <strong>dasinfomedia app.jks</strong> File and Open
-                           <strong>key.properties</strong> File And Change your <strong>.jks</strong> file Detail
-                        </li>
-                        <li>Now you can follow these steps and Generate Your Release Apk</li>
-                        <img alt="" src="images/apkk.png" height="200" width="500"></li>
-                        <p>Click on "Build" → then click on "Flutter" → and finally click on "Build APK".
-                           <strong>church_wp_app\build\app\outputs\apk\release</strong>This space will appear after the
-                           build is complete.
-                        </p>
-                     </section>
+
 
                      <section id="church-app-pages">
-                        <h3><strong>J) <u>Church Management App Overview</u></strong></h3>
+                        <h3><strong>K) <u>Church Management App Overview</u></strong></h3>
                         <br>
                         <section id="fronted-login">
                            <h3><strong><u>Login Screen:</u></strong></h3>
